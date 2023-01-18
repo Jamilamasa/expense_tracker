@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Controls from "./components/Controls";
+import NavBar from "./components/NavBar";
+import NetOutput from "./components/NetOutput";
+import Table from "./components/Table";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <div className="body p-3 overflow-hidden">
+        <div className="row gx-3">
+          <Controls />
+          <div className="col flex3 vh-89 overflow-auto">
+            <Table />
+          </div>
+          <div className="col overflow-hidden" id="outputNet">
+            <NetOutput />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
