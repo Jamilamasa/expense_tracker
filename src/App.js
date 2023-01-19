@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Controls from "./components/Controls";
+import Modal from "./components/Modal";
 import NavBar from "./components/NavBar";
 import NetOutput from "./components/NetOutput";
 import Table from "./components/Table";
@@ -36,10 +37,11 @@ function App() {
   return (
     <div>
       <NavBar />
+     
       <div className="body p-3 overflow-hidden">
         <div className="row gx-3">
           <div className="col flex1" id="controls">
-            <Controls onShowModal={showModal} />
+            <Controls onShowModal={showModal}/>
           </div>
           <div className="col flex3 vh-89 overflow-auto">
             <Table expenses={expenses} />
@@ -49,6 +51,7 @@ function App() {
           </div>
         </div>
       </div>
+      {modal.status === true && (<Modal type={modal.type}/>)}
     </div>
   );
 }
