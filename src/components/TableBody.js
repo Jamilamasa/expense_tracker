@@ -7,7 +7,7 @@ const TableBody = (props) => {
         <tr
           className={
             expense.transaction === "income" ? "table-success" : "table-danger"
-          }
+          } key={expense.id}
         >
           <th scope="row">{expense.id}</th>
           <td>{expense.date}</td>
