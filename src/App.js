@@ -37,7 +37,7 @@ function App() {
   return (
     <div>
       <NavBar />
-     
+     <p>hello fareed</p>
       <div className="body p-3 overflow-hidden">
         <div className="row gx-3">
           <div className="col flex1" id="controls">
