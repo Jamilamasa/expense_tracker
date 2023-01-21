@@ -36,6 +36,7 @@ function App() {
   ];
   return (
     <div>
+      hello kelvin
       <NavBar />
      
       <div className="body p-3 overflow-hidden">
