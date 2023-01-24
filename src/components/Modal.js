@@ -4,7 +4,7 @@ const Modal = (props) => {
   const [inputData, setInputData] = useState({
     date: "",
     description: "",
-    amount: '',
+    amount: "",
   });
   const inputDateHandler = (e) => {
     setInputData((prevData) => {
@@ -21,9 +21,12 @@ const Modal = (props) => {
       return { ...prevData, amount: e.target.value };
     });
   };
-  const addExpenseHandler = () => {
-    props.onAddExpense(inputData)
-  }
+  const addExpenseHandler = (e) => {
+    e.target.className.includes("incomeBtn") && props.onAddExpense({ ...inputData, transaction: "income" });
+    e.target.className.includes("expenseBtn") && props.onAddExpense({ ...inputData, transaction: "expense" });
+    props.onHideModal();
+    
+  };
   const hideModalHandler = () => {
     props.onHideModal();
   };
@@ -77,7 +80,13 @@ const Modal = (props) => {
           >
             Close
           </button>
-          <button type="button" onClick={addExpenseHandler} className="btn btn-primary">
+          <button
+            type="button"
+            onClick={addExpenseHandler}
+            className={`btn btn-primary${
+              props.type === "income" ? " incomeBtn" : " expenseBtn"
+            }`}
+          >
             Add
           </button>
         </div>
