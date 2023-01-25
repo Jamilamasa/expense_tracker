@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Controls from "./components/Controls";
+import Login from "./components/Login";
 import Modal from "./components/Modal";
+import SignIn from "./components/SignIn";
 import NavBar from "./components/NavBar";
 import NetOutput from "./components/NetOutput";
 import Table from "./components/Table";
@@ -53,6 +56,11 @@ function App() {
         </div>
       </div>
       {modal.status === true && (<Modal type={modal.type}/>)}
+      <Routes>
+        <Route path="/sign-in" element={<Login/>}></Route>
+        <Route path="/sign-up" element={<SignIn/>}></Route>
+      </Routes>
+      
     </div>
   );
 }
