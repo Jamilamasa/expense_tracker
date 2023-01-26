@@ -92,8 +92,7 @@ const Modal = (props) => {
               className={`btn btn-primary${props.type === "income" ? " incomeBtn" : " expenseBtn"
                 }`}
 
-              className={`btn btn-primary${props.type === "Income" ? " incomeBtn" : " expenseBtn"
-                }`}
+
 
             >
               Add
