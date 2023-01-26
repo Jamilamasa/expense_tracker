@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Modal = (props) => {
+
   const [inputData, setInputData] = useState({
     date: "",
     description: "",
@@ -25,11 +26,13 @@ const Modal = (props) => {
     e.target.className.includes("incomeBtn") && props.onAddExpense({ ...inputData, transaction: "income" });
     e.target.className.includes("expenseBtn") && props.onAddExpense({ ...inputData, transaction: "expense" });
     props.onHideModal();
-    
+
   };
   const hideModalHandler = () => {
     props.onHideModal();
   };
+
+  console.log(props);
 
   return (
     <div className="card mt-3 position-absolute t-40 start-50 translate-middle w-50 m-auto">
@@ -83,9 +86,8 @@ const Modal = (props) => {
           <button
             type="button"
             onClick={addExpenseHandler}
-            className={`btn btn-primary${
-              props.type === "income" ? " incomeBtn" : " expenseBtn"
-            }`}
+            className={`btn btn-primary${props.type === "income" ? " incomeBtn" : " expenseBtn"
+              }`}
           >
             Add
           </button>
