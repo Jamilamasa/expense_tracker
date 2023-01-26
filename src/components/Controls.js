@@ -7,42 +7,15 @@ export default function Controls(props) {
   const showIncomeModalHandler = () => {
     props.onShowModal("income")
   }
-
-  const { expenses } = props
-  console.log(expenses);
-
-  let totalExpense = 0
-  let totalIncome = 0
-
-  const allIncome = expenses.filter((expense) => {
-
-    return expense.transaction ===
-      'income'
-
-  })
-  const allExpense = expenses.filter((expense) => {
-
-    return expense.transaction ===
-      'expense'
-
-  })
-
-  for (let i = 0; i < allIncome.length; i++) {
-    totalIncome += parseInt(allIncome[i].amount)
-  }
-  for (let i = 0; i < allExpense.length; i++) {
-    totalExpense += parseInt(allExpense[i].amount)
-  }
-
   return (
     <div>
       <div className="card">
         <div className="card-body">
           <h5>
-            Total Expense: <span id="totalExpense">{totalExpense}</span>
+            Total Expense: <span id="totalExpense">0</span>
           </h5>
           <h5>
-            Total Income: <span id="totalIncome">{totalIncome}</span>
+            Total Income: <span id="totalIncome">0</span>
           </h5>
         </div>
       </div>
