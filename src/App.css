@@ -20,7 +20,12 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.t-40 {
+  top: 40%;
+}
+.z-index-n2 {
+  z-index: -2;
+}
 
 .App-header {
   background-color: #282c34;
