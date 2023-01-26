@@ -32,6 +32,8 @@ const Modal = (props) => {
   };
 
   return (
+    <>
+    <div className="backdrop"></div>
     <div className="card mt-3 position-absolute t-40 start-50 translate-middle w-50 m-auto">
       <div className="card-header display-6 fw-semibold">Add {props.type}</div>
       <div className="card-body">
@@ -84,7 +86,7 @@ const Modal = (props) => {
             type="button"
             onClick={addExpenseHandler}
             className={`btn btn-primary${
-              props.type === "income" ? " incomeBtn" : " expenseBtn"
+              props.type === "Income" ? " incomeBtn" : " expenseBtn"
             }`}
           >
             Add
@@ -92,6 +94,7 @@ const Modal = (props) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
