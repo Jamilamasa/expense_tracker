@@ -2,7 +2,7 @@ import React from "react";
 
 const TableBody = (props) => {
   return (
-    <tbody id="outputTable">
+    <tbody className='table-hover' id="outputTable">
       {props.data.map((expense, index) => (
         <tr
           className={
