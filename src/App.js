@@ -24,32 +24,37 @@ function App() {
   const addExpenseHandler = (newExpense) => {
     setExpense((prevExpense) => [newExpense, ...prevExpense]);
   };
-  console.log(expenses)
+
   return (
     <div>
       <NavBar />
       <div className="body p-3 overflow-hidden">
         <div className="row gx-3">
           <div className="col flex1" id="controls">
-            <Controls onShowModal={showModal} />
+            <Controls onShowModal={showModal} expenses={expenses} />
           </div>
           <div className="col flex3 vh-89 z-index-n2 overflow-auto">
             <Table expenses={expenses} />
           </div>
           <div className="col overflow-hidden" id="outputNet">
-            <NetOutput />
+            <NetOutput expenses={expenses} />
           </div>
         </div>
       </div>
       {modal.status === true && (
         <Modal type={modal.type} onAddExpense={addExpenseHandler} onHideModal={hideModal} />
+
       )}
-    
+
+
+
+
+
       <Routes>
-        <Route path="/sign-in" element={<Login/>}></Route>
-        <Route path="/sign-up" element={<SignIn/>}></Route>
+        <Route path="/sign-in" element={<Login />}></Route>
+        <Route path="/sign-up" element={<SignIn />}></Route>
       </Routes>
-      
+
     </div>
   );
 }
