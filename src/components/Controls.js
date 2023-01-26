@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Controls(props) {
   const showExpenseModalHandler = ()=> {
-    props.onShowModal("expense")
+    props.onShowModal("Expense")
   }
   const showIncomeModalHandler = ()=> {
-    props.onShowModal("income")
+    props.onShowModal("Income")
   }
   return (
     <div>

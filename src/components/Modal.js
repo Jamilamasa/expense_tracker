@@ -86,7 +86,7 @@ const Modal = (props) => {
             type="button"
             onClick={addExpenseHandler}
             className={`btn btn-primary${
-              props.type === "income" ? " incomeBtn" : " expenseBtn"
+              props.type === "Income" ? " incomeBtn" : " expenseBtn"
             }`}
           >
             Add
