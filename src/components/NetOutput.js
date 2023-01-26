@@ -41,7 +41,7 @@ export default function NetOutput({ expenses }) {
           Net Profit: <span id="netProfit">&#8358; {profit}</span>
         </h5>
         <h5>
-          %: <span id="percentProfit">{percentProfit.toFixed(2)}</span>
+          %: <span id="percentProfit">{percentProfit.toFixed(2) < 0 ? 0 : percentProfit.toFixed(2)}</span>
         </h5>
         <p className="card-text">
           Remark: <span id="remark">

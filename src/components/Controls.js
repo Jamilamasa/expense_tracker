@@ -36,6 +36,8 @@ export default function Controls(props) {
 
 
 
+
+
   let profit = totalIncome - totalExpense
   let percentProfit = (profit * 100) / totalIncome
 
