@@ -44,7 +44,7 @@ function App() {
       {modal.status === true && (
         <Modal type={modal.type} onAddExpense={addExpenseHandler} onHideModal={hideModal} />
       )}
-      {modal.status === true && (<Modal type={modal.type}/>)}
+    
       <Routes>
         <Route path="/sign-in" element={<Login/>}></Route>
         <Route path="/sign-up" element={<SignIn/>}></Route>
