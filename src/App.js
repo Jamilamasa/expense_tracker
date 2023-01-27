@@ -8,6 +8,8 @@ import SignIn from "./components/SignIn";
 import NavBar from "./components/NavBar";
 import NetOutput from "./components/NetOutput";
 import Table from "./components/Table";
+import Protect from "./components/Protect";
+import MainExpense from "./components/MainExpense";
 
 function App() {
   const [modal, setModal] = useState({ status: false, type: "" });
@@ -37,28 +39,17 @@ function App() {
       transaction: "income",
     },
   ];
+  const [isLogged,setislogged]=useState(true)
   return (
+   
     <div>
-      hello kelvin
-      <NavBar />
-     
-      <div className="body p-3 overflow-hidden">
-        <div className="row gx-3">
-          <div className="col flex1" id="controls">
-            <Controls onShowModal={showModal}/>
-          </div>
-          <div className="col flex3 vh-89 overflow-auto">
-            <Table expenses={expenses} />
-          </div>
-          <div className="col overflow-hidden" id="outputNet">
-            <NetOutput />
-          </div>
-        </div>
-      </div>
-      {modal.status === true && (<Modal type={modal.type}/>)}
+      
       <Routes>
-        <Route path="/sign-in" element={<Login/>}></Route>
-        <Route path="/sign-up" element={<SignIn/>}></Route>
+        <Route path="/" element={<Login/>}></Route>
+        <Route  element={<Protect isLogged={isLogged} setislogged={setislogged}><MainExpense /></Protect>} path="/expense"></Route>
+        <Route path="/sign-up" element={<Login/>}></Route>
+        <Route path="/sign-in" element={<SignIn/>}></Route>
+        <Route path='*' element={<div className='font-bold text-6xl text-red-600 text-center mt-[50vh]'>404 Error: Page not found</div>} />
       </Routes>
       
     </div>
