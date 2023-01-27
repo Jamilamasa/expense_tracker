@@ -50,6 +50,8 @@ function App() {
     },
   ];
   const [isLogged,setislogged]=useState(true)
+
+main
   return (
    
     <div>
@@ -57,18 +59,19 @@ function App() {
       <div className="body p-3 overflow-hidden">
         <div className="row gx-3">
           <div className="col flex1" id="controls">
-            <Controls onShowModal={showModal} />
+            <Controls onShowModal={showModal} expenses={expenses} />
           </div>
           <div className="col flex3 vh-89 z-index-n2 overflow-auto">
             <Table expenses={expenses} />
           </div>
           <div className="col overflow-hidden" id="outputNet">
-            <NetOutput />
+            <NetOutput expenses={expenses} />
           </div>
         </div>
       </div>
       {modal.status === true && (
         <Modal type={modal.type} onAddExpense={addExpenseHandler} onHideModal={hideModal} />
+
       )}
       {modal.status === true && (<Modal type={modal.type}/>)}
       
@@ -78,8 +81,17 @@ function App() {
         <Route path="/sign-up" element={<Login/>}></Route>
         <Route path="/sign-in" element={<SignIn/>}></Route>
         <Route path='*' element={<div className='font-bold text-6xl text-red-600 text-center mt-[50vh]'>404 Error: Page not found</div>} />
+
+
+
+
+
+      <Routes>
+        <Route path="/sign-in" element={<Login />}></Route>
+        <Route path="/sign-up" element={<SignIn />}></Route>
+
       </Routes>
-      
+
     </div>
   );
 }

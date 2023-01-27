@@ -2,7 +2,7 @@ import React from "react";
 
 const TableBody = (props) => {
   return (
-    <tbody id="outputTable">
+    <tbody className='table-hover' id="outputTable">
       {props.data.map((expense, index) => (
         <tr
           className={
@@ -12,7 +12,7 @@ const TableBody = (props) => {
           <th scope="row">{index + 1}</th>
           <td>{expense.date}</td>
           <td>{expense.description}</td>
-          <td>{expense.amount}</td>
+          <td>&#8358;{expense.amount}</td>
         </tr>
       ))}
     </tbody>
